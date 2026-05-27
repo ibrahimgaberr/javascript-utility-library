@@ -1,5 +1,5 @@
 function flattenArray(arr) {
-  if (!Array.isArray(arr)) throw new Error("value must be an array");
+  if (!Array.isArray(arr)) throw new TypeError("value must be an array");
   let result = [];
 
   for (let i = 0, len = arr.length; i < len; i++) {
@@ -18,7 +18,7 @@ function flattenArray(arr) {
 //------------------------------------------------------------------------------------------------------------------------------
 // Added to the prototype of Array
 // Array.prototype.flattenArray = function () {
-//   if (!Array.isArray(this)) throw new Error("value must be an array");
+//   if (!Array.isArray(this)) throw new TypeError("value must be an array");
 //   let result = [];
 
 //   for (let i = 0, len = this.length; i < len; i++) {
@@ -33,7 +33,3 @@ function flattenArray(arr) {
 //   }
 //   return result;
 // };
-
-// Example usage:
-// --- Test Case 1: ---
-console.log(flattenArray([1, [2, [3, [4]]]]));

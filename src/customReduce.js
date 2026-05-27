@@ -51,33 +51,3 @@ Array.prototype.customReduce = function(this, callback, initialValue) {
     }
     return accumulator;
 }
-// Example usage:
-// --- Test Case 1: ---
-// let num = [1, 2, 3, 4];
-// let newNum = customReduce(num, (acc, curr) => { return acc + curr }, 5);
-// console.log(newNum); 
-
-// --- Test Case 2: ---
-// let edgeCase = customReduce([], (acc, cur) => acc + cur);
-// console.log(edgeCase);
-
-// --- Test Case 3: ---
-// let edgeCase1 = customReduce([5], (acc, cur) => acc + cur);
-// console.log(edgeCase1);
-
-// --- Test Case 4: ---
-// let edgeCase2 = customReduce([ , , 3, , 50, , ,], (acc, cur) =>{ return acc + cur}, 1);
-// console.log(edgeCase2);
-
-// --- Test Case 5: ---
-// const products = [
-//     { name: "Laptop", price: 1000 },
-//     { name: "Mouse", price: 50 },
-//     { name: "Keyboard", price: 50 }
-// ];
-
-// const total = customReduce(products, (acc, currentProduct) => {
-//     return acc + currentProduct.price;
-// },0);
-
-// console.log(total);

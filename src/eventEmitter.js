@@ -27,31 +27,3 @@ class EventEmitter {
         }
     }
 }
-
-function printTitle(data) {
-    console.log("Video uploaded: " + data.title);
-}
-
-function printDescription(data) {
-    console.log("Video uploaded: " + data.description);
-}
-
-function printDuration(data) {
-    console.log("Video duration: " + data.duration);
-}
-
-const videoData = {
-    title: 'Event Emitter in JavaScript',
-    description: 'Learn how to implement an event emitter in JavaScript.',
-    duration: '5 minutes'
-};
-
-const eventEmitter = new EventEmitter();
-
-eventEmitter.on("videoUploaded", printTitle);
-eventEmitter.on("videoUploaded", printDescription);
-eventEmitter.on("videoUploaded", printDuration);
-
-eventEmitter.off("videoUploaded", printTitle);
-
-eventEmitter.emit("videoUploaded", videoData);

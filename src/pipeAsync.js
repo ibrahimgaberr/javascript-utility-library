@@ -15,29 +15,3 @@ function asyncPipe(...fns) {
         return result;
     }
 }
-
-// Example usage:
-// --- Test Case 1: ---
-
-// let addOne = async (x) => x + 1;
-// let multiply = async (x) => x * 2;
-// let square = async (x) => x * x;
-// let result = asyncPipe(addOne, multiply, square);
-
-// result(2).then(finalResult => console.log(finalResult)); 
-
-// --- Test Case 2: ---
-const addTaxAsync = async (price) => {
-    return new Promise(resolve => setTimeout(() => resolve(price + 5), 1000));
-};
-
-const applyDiscountAsync = async (price) => {
-    return new Promise(resolve => setTimeout(() => resolve(price - 2), 1000));
-};
-
-const formatCurrencyAsync = async (price) => {
-    return new Promise(resolve => setTimeout(() => resolve(`price: ${price}`), 1000));
-};
-
-let result = asyncPipe(addTaxAsync, applyDiscountAsync, formatCurrencyAsync);
-result(100).then(finalResult => console.log(finalResult));
